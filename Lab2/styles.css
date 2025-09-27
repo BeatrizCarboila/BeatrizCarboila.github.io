@@ -3,13 +3,13 @@ header{
     color: white; 
     text-align: center; 
     padding: 10px 0;
-    margin: 10px;
+    margin: 0;
 }
 
 nav{
-    background-color: dimgray;
+    background-color: #b3b3b3;
     text-align: center;
-    margin: 10px;
+    margin: 0;
     padding: 10px;
 }
 
@@ -33,7 +33,7 @@ main{
 
 footer{
     text-align: center;
-    background-color: dimgray;
+    background-color: #b3b3b3;
     color: white;
 }
 
