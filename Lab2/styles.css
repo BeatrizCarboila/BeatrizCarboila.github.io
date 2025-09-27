@@ -16,5 +16,27 @@ ul{
 }
 
 li{
-
+    display: inline; 
+    margin: 0 15px;
 }
+
+a{
+   color: steelblue;
+}
+
+main{
+    text align: center; 
+    margin: 20px;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border: 3px solid seagreen; 
+}
+
+footer{
+    text-align: center;
+}
+
