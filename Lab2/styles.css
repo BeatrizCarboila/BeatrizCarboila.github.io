@@ -2,7 +2,8 @@ header{
 background-color: steelblue; 
 color: white; 
 text-align: center; 
-padding: 30px 0;
+padding: 10px 0;
+margin: 10px;
 }
 
 nav{
@@ -32,6 +33,6 @@ main{
 
 footer{
     text-align: center;
-    color: dimgray;
+    background-color: dimgray;
 }
 
