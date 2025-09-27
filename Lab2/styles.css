@@ -1,18 +1,18 @@
 header{
-background-color: steel blue; 
+background-color: steelbue; 
 color: white; 
 text align: center; 
 }
 
 nav{
-    background-color: white;´
-    text align: center;
+    background-color: white;
+    text-align: center;
     margin: 10px;
     padding: 10px;
 }
 
 ul{
-    padding: 0%;
+    padding: 0;
 }
 
 li{
