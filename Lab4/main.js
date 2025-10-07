@@ -68,8 +68,8 @@ caixa.addEventListener("input", function(){
      }
 })
 
-let riso = document.getElementById(riso)
-let numero = document.getElementById(numero)
+let riso = document.getElementById("riso")
+let numero = document.getElementById("numero")
 let conta = 0
 riso.addEventListener("click", function(){
      conta ++ 
