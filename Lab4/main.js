@@ -76,7 +76,7 @@ riso.addEventListener("click", function(){
      numero.textContent = conta
 })
 
-let img = document.getElementById("imagem")
+let img = document.getElementById("fotografia")
 img.addEventListener("mouseover", function(){
      let x = Math.random() * 300;
      let y = Math.random() * 200;
