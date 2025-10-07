@@ -32,8 +32,8 @@ button {
     border-radius: 5px;
 }
 
-#imagem {
+#fotografia {
     margin-top: 20px;
     position: relative;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
