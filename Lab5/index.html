@@ -2,64 +2,114 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    p, input, button {
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    input[type="text"] {
+      padding: 3px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+    }
+
+    button {
+      padding: 3px 8px;
+      border: 1px solid #555;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+
+    .caixa {
+      display: inline-block;
+      width: 100px;
+      height: 25px;
+      border: 1px solid #000;
+      margin-left: 5px;
+      vertical-align: middle;
+      background-color: white;
+    }
+  </style>
 </head>
 <body>
-    <h2>1.Passa por aqui!</h2>
-    <p id="toggleTexto" onmouseover="mudarTexto()" onmouseout="voltarTexto()">Passa por aqui!</p>
+  <h2>1. Passa por aqui!</h2>
+  <p id="toggleTexto" onmouseover="mudarTexto()" onmouseout="voltarTexto()">Passa por aqui!</p>
 
-    <h2>2.Pinta-me!</h2>
-    <p id="pintar">Pinta-me!</p>
-    <button onclick="mudarcor('red')">Red</button>
-    <button onclick="mudarcor('green')">Green</button>
-    <button onclick="mudarcor('blue')">Blue</button>
+  <h2>2. Pinta-me!</h2>
+  <p id="pintar">Pinta-me!</p>
+<button class="color" data-color="purple">Purple</button>
+<button class="color" data-color="orange">Orange</button>
+<button class="color" data-color="brown">Brown</button>
 
-    <h2>3.Experimenta escrever...</h2>
-    <p Experimenta escrever...
-    <input id= "inputcolor" type="text" onkeydown="mudarCorCaixa()">
-    <span id="corCaixa" class="caixa"></span>
-    </p> 
+  <h2>3. Experimenta escrever...</h2>
+  <input id="inputColor" type="text" onkeyup="mudarCorCaixa()">
+  <span id="corCaixa" class="caixa"></span>
 
-    <p Escolha uma cor em inglês: <input id = "corEscolhida" type="text">
-        <button onclick="mudarFundo()">Submeter</button>
-    </p>
+  <h2>4. Escolha uma cor em inglês:</h2>
+  <select id="corEscolhida" onchange="mudarFundo(this)">
+  <option value="">Selecione uma cor</option>
+  <option value="white>white</option>
+  <option value="red">red</option>
+  <option value="blue">blue</option>
+</select>
 
-    <button onclick="contar()">Conta!</button>
-    <span id= "contador">0</span>
-    
-    
-<script>
+  <h2>5. Conta!</h2>
+  <button onclick="contar()">Conta!</button>
+  <span id="contador">0</span>
 
-    function mudarTexto(){
-        document.getElementById("toggleTexto").innerText = "Obrigada por passares!"
+  h2>6.</h2>
+<input id="nome" type="text" placeholder="Nome">
+<input id="idade" type="number" placeholder="Idade">
+<button onclick="mostrarMensagem()">Submit</button>
+
+<p id="mensagem"></p>
+
+  <script>
+    function mudarTexto() {
+      document.getElementById("toggleTexto").innerText = "Obrigada por passares!";
     }
 
-    function voltarTexto(){
-        document.getElementById("toggleTexto").innerText = "Passa por aqui!";
+    function voltarTexto() {
+      document.getElementById("toggleTexto").innerText = "Passa por aqui!";
     }
 
-    function mudarcor(){
-        document.getElementById("pintar").style.color = cor; 
+    document.querySelectorAll("button.color").forEach((button) => {
+      button.addEventListener("click", () => {
+      const cor = button.dataset.color; // lê o valor de data-color
+      document.getElementById("pintar").style.color = cor;
+  });
+});
+
+    function mudarCorCaixa() {
+      const texto = document.getElementById("inputColor").value.toLowerCase();
+      const caixa = document.getElementById("corCaixa");
+      caixa.style.backgroundColor = texto;
     }
 
-    const color = ["blue", "red", "yellow", "gray"];
-    let indice = 0;
-
-    function mudarcorcaixa(){
-        document.getElementById("corCaixa");
-        caixa.style.backgroundcolor = cores[indice]; 
-        indice = (indice + 1) % color.length; 
+   function mudarFundo(selectElement) {
+      const cor = selectElement.value.toLowerCase();
+      document.body.style.backgroundColor = cor;
     }
 
-    function mudarFundo(){
-        const cor = document.getElementById("corEscolhida").value.toLowercase();
-        document.body.style.backgroundColor = cor; 
-    }
+   const contar = () => {
+  contador++;
+  document.getElementById("contador").innerText = contador;
+};
 
-    let contador = 0; 
-    function contar(){
-        contador++; 
-        document.getElementById("contador").innerText = contador;
+   function mostrarMensagem() {
+      const nome = document.getElementById("nome").value;
+      const idade = document.getElementById("idade").value;
     }
-</script>
+  </script>
 </body>
 </html>
