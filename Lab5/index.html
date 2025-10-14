@@ -58,22 +58,15 @@
   <h2>4. Escolha uma cor em inglês:</h2>
   <select id="corEscolhida" onchange="mudarFundo(this)">
   <option value="">Selecione uma cor</option>
-  <option value="white>white</option>
+  <option value="white">white</option>
   <option value="red">red</option>
   <option value="blue">blue</option>
-  <option value="white">white</option>
 </select>
 
   <h2>5. Conta!</h2>
   <button onclick="contar()">Conta!</button>
   <span id="contador">0</span>
 
-  h2>6.</h2>
-<input id="nome" type="text" placeholder="Nome">
-<input id="idade" type="number" placeholder="Idade">
-<button onclick="mostrarMensagem()">Submit</button>
-
-<p id="mensagem"></p>
 
   <script>
     function mudarTexto() {
@@ -86,7 +79,7 @@
 
     document.querySelectorAll("button.color").forEach((button) => {
       button.addEventListener("click", () => {
-      const cor = button.dataset.color; // lê o valor de data-color
+      const cor = button.dataset.color; 
       document.getElementById("pintar").style.color = cor;
   });
 });
@@ -95,16 +88,17 @@
       const texto = document.getElementById("inputColor").value.toLowerCase();
       const caixa = document.getElementById("corCaixa");
       caixa.style.backgroundColor = texto;
-    }
+}
 
-   function mudarFundo(selectElement) {
+    function mudarFundo(selectElement) {
       const cor = selectElement.value.toLowerCase();
       document.body.style.backgroundColor = cor;
     }
 
-   const contar = () => {
-  contador++;
-  document.getElementById("contador").innerText = contador;
+    let contador = 0;
+    const contar = () => {
+      contador++;
+      document.getElementById("contador").innerText = contador;
 };
 
   </script>
