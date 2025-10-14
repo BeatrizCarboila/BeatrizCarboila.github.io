@@ -52,8 +52,7 @@
 <button class="color" data-color="brown">Brown</button>
 
   <h2>3. Experimenta escrever...</h2>
-  <input id="inputColor" type="text">
-<span id="caixa" class="caixa"></span>
+<input id="inputColor" type="text" placeholder="Experimenta escrever...">
 
   <h2>4. Escolha uma cor em inglês:</h2>
   <select id="corEscolhida" onchange="mudarFundo(this)">
@@ -84,18 +83,18 @@
     });
     });
 
-   let caixa = document.getElementById("caixa");
-   let cores = ["blue", "red", "yellow", "gray"];
-   let pos = 0;
+    let input = document.getElementById("inputColor");
+      let cores = ["blue", "red", "yellow", "gray"];
+      let pos = 0;
 
-    document.getElementById("inputColor").addEventListener("input", function() {
-      caixa.style.backgroundColor = cores[pos];
-       pos++;
-       if (pos === cores.length) {
+    input.addEventListener("input", function() {
+      input.style.backgroundColor = cores[pos];
+      pos++;
+      if (pos === cores.length) {
         pos = 0;
     }
     });
-
+    
     function mudarFundo(selectElement) {
       const cor = selectElement.value.toLowerCase();
       document.body.style.backgroundColor = cor;
