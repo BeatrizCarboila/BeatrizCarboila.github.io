@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+    <h2>1.Passa por aqui!</h2>
+    <p id="toggleTexto" onmouseover="mudarTexto()" onmouseout="voltarTexto()">Passa por aqui!</p>
+
+    <h2>2.Pinta-me!</h2>
+    <p id="pintar">Pinta-me!</p>
+    <button onclick="mudarcor('red')">Red</button>
+    <button onclick="mudarcor('green')">Green</button>
+    <button onclick="mudarcor('blue')">Blue</button>
+
+    <h2>3.Experimenta escrever...</h2>
+    <p Experimenta escrever...
+    <input id= "inputcolor" type="text" onkeydown="mudarCorCaixa()">
+    <span id="corCaixa" class="caixa"></span>
+    </p> 
+
+    <p Escolha uma cor em inglês: <input id = "corEscolhida" type="text">
+        <button onclick="mudarFundo()">Submeter</button>
+    </p>
+
+    <button onclick="contar()">Conta!</button>
+    <span id= "contador">0</span>
+    
+    
+<script>
+
+    function mudarTexto(){
+        document.getElementById("toggleTexto").innerText = "Obrigada por passares!"
+    }
+
+    function voltarTexto(){
+        document.getElementById("toggleTexto").innerText = "Passa por aqui!";
+    }
+
+    function mudarcor(){
+        document.getElementById("pintar").style.color = cor; 
+    }
+
+    const color = ["blue", "red", "yellow", "gray"];
+    let indice = 0;
+
+    function mudarcorcaixa(){
+        document.getElementById("corCaixa");
+        caixa.style.backgroundcolor = cores[indice]; 
+        indice = (indice + 1) % color.length; 
+    }
+
+    function mudarFundo(){
+        const cor = document.getElementById("corEscolhida").value.toLowercase();
+        document.body.style.backgroundColor = cor; 
+    }
+
+    let contador = 0; 
+    function contar(){
+        contador++; 
+        document.getElementById("contador").innerText = contador;
+    }
+</script>
+</body>
+</html>
